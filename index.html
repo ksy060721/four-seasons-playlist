@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Seasons Playlist - 계절을 듣다</title>
+    
+    <!-- 폰트: Noto Sans KR, Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 아이콘: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 상단 고정 네비게이션 -->
+    <nav>
+        <div class="logo">SEASONS.</div>
+        <button class="home-btn" onclick="showMain()">
+            <i class="fas fa-home"></i> Home
+        </button>
+    </nav>
+
+    <!-- [1] 메인 화면: 계절 선택 -->
+    <main id="main-view">
+        <div class="main-header">
+            <h1>Select Season</h1>
+            <p>당신의 감정에 맞는 계절을 선택해보세요.</p>
+        </div>
+
+        <div class="season-grid">
+            <!-- 봄 카드 -->
+            <div class="season-card" data-season="spring" onclick="showDetail('spring')">
+                <i class="fas fa-seedling card-icon"></i>
+                <div>
+                    <div class="card-title">Spring</div>
+                    <div class="card-desc">설레는 시작</div>
+                </div>
+            </div>
+            <!-- 여름 카드 -->
+            <div class="season-card" data-season="summer" onclick="showDetail('summer')">
+                <i class="fas fa-sun card-icon"></i>
+                <div>
+                    <div class="card-title">Summer</div>
+                    <div class="card-desc">청량한 에너지</div>
+                </div>
+            </div>
+            <!-- 가을 카드 -->
+            <div class="season-card" data-season="autumn" onclick="showDetail('autumn')">
+                <i class="fas fa-leaf card-icon"></i>
+                <div>
+                    <div class="card-title">Autumn</div>
+                    <div class="card-desc">깊어가는 감성</div>
+                </div>
+            </div>
+            <!-- 겨울 카드 -->
+            <div class="season-card" data-season="winter" onclick="showDetail('winter')">
+                <i class="fas fa-snowflake card-icon"></i>
+                <div>
+                    <div class="card-title">Winter</div>
+                    <div class="card-desc">따뜻한 위로</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- [2] 상세 페이지들 -->
+
+    <!-- 봄 상세 페이지 -->
+    <section id="spring-page" class="detail-view">
+        <div class="detail-header">
+            <h2 class="detail-title">Spring Playlist</h2>
+            <p class="detail-desc">살랑살랑 따뜻한 봄바람이 불어올 때</p>
+        </div>
+        <div class="song-list">
+            <!-- 곡 1 -->
+            <article class="song-item">
+                <div class="song-cover">
+                    <!-- images 폴더에 spring1.jpg 파일을 넣어주세요 -->
+                    <img src="images/spring1.jpg" alt="봄이 좋냐?">
+                </div>
+                <div class="song-content">
+                    <h3>봄이 좋냐?</h3>
+                    <p class="artist">10cm</p>
+                    <div class="comment">살랑살랑 따뜻한 봄바람 느낌을 그대로 담은 멜로디지만, 커플들이 몽땅 망했으면 좋겠다며 질투하는 귀여운 가사가 포인트인 노래입니다.</div>
+                    <a href="https://youtu.be/cIGgSI1uhKI?si=BjGhxKJuT3rGXgoh" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <!-- 곡 2 -->
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/spring2.jpg" alt="벚꽃엔딩">
+                </div>
+                <div class="song-content">
+                    <h3>벚꽃엔딩</h3>
+                    <p class="artist">버스커버스커</p>
+                    <div class="comment">매년 봄이 될 때마다 차트에 오르는 명곡. 떨어지는 벚꽃잎들 사이로 함께 걷고 싶은 ‘그대’를 떠올리게 하는 설레는 노래입니다.</div>
+                    <a href="https://youtu.be/tXV7dfvSefo?si=0qMpJeIk_e9nfLt6" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <!-- 곡 3 -->
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/spring3.jpg" alt="나만, 봄">
+                </div>
+                <div class="song-content">
+                    <h3>나만, 봄</h3>
+                    <p class="artist">볼빨간 사춘기</p>
+                    <div class="comment">딱 붙어있고 싶고, 같이 벚꽃 속을 걷고 싶어 하는 따뜻하고 간질간질한 짝사랑의 마음을 사랑스럽게 담아낸 노래입니다.</div>
+                    <a href="https://youtu.be/AsXxuIdpkWM?si=KazV_EPxd8fOtIMP" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="back-nav">
+            <button class="back-btn-large" onclick="showMain()">다른 계절 선택하기</button>
+        </div>
+    </section>
+
+    <!-- 여름 상세 페이지 -->
+    <section id="summer-page" class="detail-view">
+        <div class="detail-header">
+            <h2 class="detail-title">Summer Playlist</h2>
+            <p class="detail-desc">뜨거운 태양 아래 청량함이 필요할 때</p>
+        </div>
+        <div class="song-list">
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/summer1.jpg" alt="View">
+                </div>
+                <div class="song-content">
+                    <h3>View</h3>
+                    <p class="artist">샤이니</p>
+                    <div class="comment">시원하고 가벼운 멜로디의 곡입니다. K-POP 청량 감성의 정석으로 불리며 한순간에 공기를 시원하게 만들어주는 마법 같은 곡!</div>
+                    <a href="https://youtu.be/UF53cptEE5k?si=cMeOBDuR78J_Gr4L" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/summer2.jpg" alt="파랗게">
+                </div>
+                <div class="song-content">
+                    <h3>파랗게</h3>
+                    <p class="artist">WOODZ</p>
+                    <div class="comment">사랑에 빠지면서 모든 감정이 파랗게 물들어가는 순간을 표현했습니다. 청량하고 시원하게 터지는 멜로디가 여름에 딱 어울립니다.</div>
+                    <a href="https://youtu.be/HaqhQs5lBWE?si=Ie2gHWMopzHxeUOT" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/summer3.jpg" alt="Supersonic">
+                </div>
+                <div class="song-content">
+                    <h3>Supersonic</h3>
+                    <p class="artist">fromis_9</p>
+                    <div class="comment">통통 튀고 산뜻한 분위기의 곡입니다. 마치 청춘 영화의 한 장면 속에 들어와 있는 듯한 여름 감성이 물씬 느껴집니다.</div>
+                    <a href="https://youtu.be/0LiQp7y8Wwc?si=k7Oje2hr0grZ4voZ" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="back-nav">
+            <button class="back-btn-large" onclick="showMain()">다른 계절 선택하기</button>
+        </div>
+    </section>
+
+    <!-- 가을 상세 페이지 -->
+    <section id="autumn-page" class="detail-view">
+        <div class="detail-header">
+            <h2 class="detail-title">Autumn Playlist</h2>
+            <p class="detail-desc">서늘한 바람과 함께 깊어지는 감성</p>
+        </div>
+        <div class="song-list">
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/autumn1.jpg" alt="가을 아침">
+                </div>
+                <div class="song-content">
+                    <h3>가을 아침</h3>
+                    <p class="artist">아이유 (Cover)</p>
+                    <div class="comment">더웠던 여름이 끝나고 서늘한 냉기가 반겨주는 가을 아침이 시작되면 자연스럽게 찾게 되는 곡. 가을 아침의 상쾌함을 담았습니다.</div>
+                    <a href="https://youtu.be/Ub6IyAOTwr8?si=rS0-J5wWBhUW8UuR" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/autumn2.jpg" alt="가을 밤에 든 생각">
+                </div>
+                <div class="song-content">
+                    <h3>가을 밤에 든 생각</h3>
+                    <p class="artist">잔나비</p>
+                    <div class="comment">미사여구 없이 담백한 가사와 잔나비만의 독특하고 빈티지한 감성으로, 질리지 않고 오래오래 듣고 싶은 노래입니다.</div>
+                    <a href="https://youtu.be/9T_uq_HpfyQ?si=311CpTovL2Ix3bxD" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/autumn3.jpg" alt="가을이 오면">
+                </div>
+                <div class="song-content">
+                    <h3>가을이 오면</h3>
+                    <p class="artist">이문세</p>
+                    <div class="comment">잔잔한 여느 가을 노래와 다르게 밝고 산뜻한 멜로디가 특징입니다. 오래된 노래지만 가을이 올 때마다 가장 먼저 찾게 됩니다.</div>
+                    <a href="https://youtu.be/k86b7E8ZVZ0?si=DJc3D63N4yYMEraB" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="back-nav">
+            <button class="back-btn-large" onclick="showMain()">다른 계절 선택하기</button>
+        </div>
+    </section>
+
+    <!-- 겨울 상세 페이지 -->
+    <section id="winter-page" class="detail-view">
+        <div class="detail-header">
+            <h2 class="detail-title">Winter Playlist</h2>
+            <p class="detail-desc">하얀 눈과 따뜻한 코코아 같은 음악</p>
+        </div>
+        <div class="song-list">
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/winter1.jpg" alt="첫눈">
+                </div>
+                <div class="song-content">
+                    <h3>첫눈</h3>
+                    <p class="artist">EXO</p>
+                    <div class="comment">첫눈이 주는 설렘과 다시 만나고 싶은 사람을 떠올리는 따뜻한 감정이 섬세하게 담겨 있습니다. 겨울 시즌의 시그니처 곡!</div>
+                    <a href="https://youtu.be/h0b4nw7NDhA?si=YpsmCIrsFGcxFTUl" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/winter2.jpg" alt="눈사람">
+                </div>
+                <div class="song-content">
+                    <h3>눈사람</h3>
+                    <p class="artist">정승환</p>
+                    <div class="comment">섬세한 가사가 겨울이 가진 따뜻함과 쓸쓸함을 동시에 담아냅니다. 오래된 기억 속 한 장면을 꺼내 보는 듯한 기분을 줍니다.</div>
+                    <a href="https://youtu.be/gPNu9OIj4Zo?si=R6O1375YEdOelztR" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+            <article class="song-item">
+                <div class="song-cover">
+                    <img src="images/winter3.jpg" alt="Christmas Tree">
+                </div>
+                <div class="song-content">
+                    <h3>Christmas Tree</h3>
+                    <p class="artist">V (BTS)</p>
+                    <div class="comment">잔잔하게 흐르는 기타 사운드가 겨울밤의 조용한 공기를 그대로 담아낸 듯합니다. 혼자만의 시간에 스며드는 따뜻한 곡입니다.</div>
+                    <a href="https://youtu.be/lj8TV9q59P4?si=DYRixi3G1HigG_OJ" target="_blank" class="youtube-btn">
+                        <i class="fab fa-youtube"></i> 유튜브에서 듣기
+                    </a>
+                </div>
+            </article>
+        </div>
+        <div class="back-nav">
+            <button class="back-btn-large" onclick="showMain()">다른 계절 선택하기</button>
+        </div>
+    </section>
+
+    <!-- 자바스크립트 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
