@@ -1,4 +1,4 @@
-/* 전체 기본 설정 */
+/* 초기화 */
 * {
     margin: 0;
     padding: 0;
@@ -7,160 +7,65 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    background-color: #f5f7fa; /* 메인 배경색 적용 */
-    color: #000; /* 기본 글자색 */
+    background-color: #f5f7fa;
+    color: #000;
 }
 
-/* 헤더 스타일 */
+/* 헤더 */
 header {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f5f7fa; /* 메인 배경색 */
-    color: #000; /* 글자 검정 */
 }
 
 header h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* 내비게이션 바 스타일 (상단 고정) */
-nav {
-    background-color: #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 15px 0;
-}
-
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #ffd700; /* 마우스 올렸을 때 강조색 */
-}
-
-/* 공통 섹션 스타일 */
-.season-section {
-    padding: 80px 20px;
-    min-height: 100vh; /* 화면 꽉 차게 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    text-align: center;
-}
-
-.season-title {
-    font-size: 3rem;
-    margin-bottom: 50px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     font-weight: 700;
 }
 
-/* 카드 컨테이너 (Flexbox 활용) */
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
+/* 계절 목록 리스트 */
+.season-list {
+    list-style: none;
+    width: 320px;
+    margin: 60px auto;
+    padding: 0;
 }
 
-/* 노래 카드 스타일 */
-.song-card {
-    background: white;
-    width: 350px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease; /* 호버 애니메이션 */
+.season-list li {
+    margin-bottom: 20px;
 }
 
-.song-card:hover {
-    transform: translateY(-10px); /* 마우스 올리면 살짝 위로 */
+/* 계절 버튼 스타일 */
+.season-list a {
+    display: block;
+    text-decoration: none;
+    padding: 18px 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.25s ease;
 }
 
-/* 유튜브 영상 컨테이너 (반응형 비율 유지) */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 비율 */
-    height: 0;
+.season-list a:hover {
+    background-color: #eaeaea;
+    transform: translateY(-5px);
 }
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+/* 아이콘이 있을 경우 자동 정렬 */
+.season-list a span {
+    font-size: 1.6rem;
+    margin-right: 8px;
 }
 
-.song-info {
-    padding: 20px;
-    text-align: left;
-}
-
-.song-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.song-info p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5;
-    word-break: keep-all; /* 한글 단어 잘림 방지 */
-}
-
-/* --- 계절별 배경색 설정 (유지) --- */
-
-/* 봄 */
-#spring {
-    background-color: #FFD1DC;
-}
-
-/* 여름 */
-#summer {
-    background-color: #AAD1EF;
-}
-
-/* 가을 */
-#autumn {
-    background-color: #900200;
-}
-
-/* 겨울 */
-#winter {
-    background-color: #00310b;
-}
-
-/* 푸터 스타일 */
+/* 공통 footer */
 footer {
     background-color: #222;
     color: #aaa;
     text-align: center;
     padding: 20px;
+    margin-top: 100px;
     font-size: 0.9rem;
 }
