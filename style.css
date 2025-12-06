@@ -7,7 +7,8 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    color: #333;
+    color: #000; /* 글자색 검정으로 변경 */
+    background-color: #f5f7fa; /* 메인 배경색 변경 */
 }
 
 /* 헤더 스타일 */
@@ -51,13 +52,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd700; /* 마우스 올렸을 때 강조색 */
+    color: #ffd700;
 }
 
 /* 공통 섹션 스타일 */
 .season-section {
     padding: 80px 20px;
-    min-height: 100vh; /* 화면 꽉 차게 */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,33 +78,33 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
-/* 카드 컨테이너 (Flexbox 활용) */
+/* 카드 컨테이너 */
 .card-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
+    flex-wrap: wrap;
 }
 
-/* 노래 카드 스타일 */
+/* 노래 카드 */
 .song-card {
     background: white;
     width: 350px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease; /* 호버 애니메이션 */
+    transition: transform 0.3s ease;
 }
 
 .song-card:hover {
-    transform: translateY(-10px); /* 마우스 올리면 살짝 위로 */
+    transform: translateY(-10px);
 }
 
-/* 유튜브 영상 컨테이너 (반응형 비율 유지) */
+/* 유튜브 영상 컨테이너 */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 비율 */
+    padding-bottom: 56.25%;
     height: 0;
 }
 
@@ -128,29 +129,25 @@ nav ul li a:hover {
 
 .song-info p {
     font-size: 0.95rem;
-    color: #666;
+    color: #444; /* 기본 글자색과 조화롭게 조정 */
     line-height: 1.5;
-    word-break: keep-all; /* 한글 단어 잘림 방지 */
+    word-break: keep-all;
 }
 
-/* --- 계절별 배경색 설정 (요청하신 색상 코드 적용) --- */
+/* --- 계절별 배경색 --- */
 
-/* 봄: 벚꽃색 (임의 지정) */
 #spring {
     background-color: #FFD1DC;
 }
 
-/* 여름: #AAD1EF (제공) */
 #summer {
     background-color: #AAD1EF;
 }
 
-/* 가을: #900200 (제공) - 배경이 어두우므로 텍스트 색상 조정 필요 없음 (타이틀은 흰색 고정) */
 #autumn {
     background-color: #900200;
 }
 
-/* 겨울: #00310b (제공) */
 #winter {
     background-color: #00310b;
 }
