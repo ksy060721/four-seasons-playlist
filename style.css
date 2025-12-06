@@ -7,16 +7,16 @@
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    color: #000; /* 글자색 검정으로 변경 */
-    background-color: #f5f7fa; /* 메인 배경색 변경 */
+    background-color: #f5f7fa; /* 메인 배경색 적용 */
+    color: #000; /* 기본 글자색 */
 }
 
 /* 헤더 스타일 */
 header {
     text-align: center;
     padding: 60px 20px;
-    background-color: #222;
-    color: white;
+    background-color: #f5f7fa; /* 메인 배경색 */
+    color: #000; /* 글자 검정 */
 }
 
 header h1 {
@@ -52,13 +52,13 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffd700;
+    color: #ffd700; /* 마우스 올렸을 때 강조색 */
 }
 
 /* 공통 섹션 스타일 */
 .season-section {
     padding: 80px 20px;
-    min-height: 100vh;
+    min-height: 100vh; /* 화면 꽉 차게 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,33 +78,33 @@ nav ul li a:hover {
     font-weight: 700;
 }
 
-/* 카드 컨테이너 */
+/* 카드 컨테이너 (Flexbox 활용) */
 .card-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
 }
 
-/* 노래 카드 */
+/* 노래 카드 스타일 */
 .song-card {
     background: white;
     width: 350px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* 호버 애니메이션 */
 }
 
 .song-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* 마우스 올리면 살짝 위로 */
 }
 
-/* 유튜브 영상 컨테이너 */
+/* 유튜브 영상 컨테이너 (반응형 비율 유지) */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 비율 */
     height: 0;
 }
 
@@ -129,25 +129,29 @@ nav ul li a:hover {
 
 .song-info p {
     font-size: 0.95rem;
-    color: #444; /* 기본 글자색과 조화롭게 조정 */
+    color: #666;
     line-height: 1.5;
-    word-break: keep-all;
+    word-break: keep-all; /* 한글 단어 잘림 방지 */
 }
 
-/* --- 계절별 배경색 --- */
+/* --- 계절별 배경색 설정 (유지) --- */
 
+/* 봄 */
 #spring {
     background-color: #FFD1DC;
 }
 
+/* 여름 */
 #summer {
     background-color: #AAD1EF;
 }
 
+/* 가을 */
 #autumn {
     background-color: #900200;
 }
 
+/* 겨울 */
 #winter {
     background-color: #00310b;
 }
