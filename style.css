@@ -1,391 +1,165 @@
-/* =========================================
-   변수 설정 (테마 색상)
-   ========================================= */
-:root {
-    --spring-color: #F8B9E3;
-    --summer-color: #AAD1EF;
-    --autumn-color: #900200;
-    --winter-color: #00310b;
-    --bg-color: #ffffff;
-    --text-main: #333333;
-    --text-sub: #666666;
-    --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    --hover-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+/* 전체 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-/* --- 기본 초기화 --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    overflow-x: hidden;
-    line-height: 1.6;
+    font-family: "Noto Sans KR", sans-serif;
+    color: #333;
 }
 
-a { text-decoration: none; color: inherit; }
-button { border: none; background: none; cursor: pointer; font-family: inherit; }
-ul { list-style: none; }
+/* 헤더 스타일 */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #222;
+    color: white;
+}
 
-/* --- 네비게이션 바 --- */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* 내비게이션 바 스타일 (상단 고정) */
 nav {
-    position: fixed;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* 마우스 올렸을 때 강조색 */
+}
+
+/* 공통 섹션 스타일 */
+.season-section {
+    padding: 80px 20px;
+    min-height: 100vh; /* 화면 꽉 차게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.season-title {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+}
+
+/* 카드 컨테이너 (Flexbox 활용) */
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* 화면 작아지면 줄바꿈 */
+}
+
+/* 노래 카드 스타일 */
+.song-card {
+    background: white;
+    width: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease; /* 호버 애니메이션 */
+}
+
+.song-card:hover {
+    transform: translateY(-10px); /* 마우스 올리면 살짝 위로 */
+}
+
+/* 유튜브 영상 컨테이너 (반응형 비율 유지) */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
-}
-
-.home-btn {
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 8px 24px;
-    border-radius: 50px;
-    border: 1px solid #eee;
-    background: white;
-    transition: var(--transition);
-}
-
-.home-btn:hover {
-    background: var(--text-main);
-    color: white;
-    border-color: var(--text-main);
-    transform: translateY(-2px);
-}
-
-/* --- 메인 화면 (계절 선택) --- */
-#main-view {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px 40px;
-    transition: opacity 0.5s ease;
-}
-
-.main-header {
-    text-align: center;
-    margin-bottom: 60px;
-    animation: fadeInDown 1s ease-out;
-}
-
-.main-header h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    letter-spacing: -1px;
-}
-
-.main-header p {
-    color: var(--text-sub);
-    font-size: 1.2rem;
-    font-weight: 300;
-}
-
-.season-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    width: 100%;
-    max-width: 1200px;
-    animation: fadeInUp 1s ease-out 0.3s backwards;
-}
-
-.season-card {
-    position: relative;
-    height: 420px;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #f0f0f0;
-}
-
-.season-card:hover {
-    transform: translateY(-15px);
-    box-shadow: var(--hover-shadow);
-}
-
-.card-icon {
-    font-size: 4.5rem;
-    margin-bottom: 25px;
-    color: #ddd;
-    transition: var(--transition);
-}
-
-.card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-main);
-    transition: var(--transition);
-}
-
-.card-desc {
-    margin-top: 15px;
-    color: var(--text-sub);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition);
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-/* 호버 효과: 각 계절별 색상 적용 */
-.season-card:hover .card-desc { opacity: 1; transform: translateY(0); }
-
-.season-card[data-season="spring"]:hover { border-color: var(--spring-color); }
-.season-card[data-season="spring"]:hover .card-icon, 
-.season-card[data-season="spring"]:hover .card-title { color: var(--spring-color); }
-
-.season-card[data-season="summer"]:hover { border-color: var(--summer-color); }
-.season-card[data-season="summer"]:hover .card-icon, 
-.season-card[data-season="summer"]:hover .card-title { color: var(--summer-color); }
-
-.season-card[data-season="autumn"]:hover { border-color: var(--autumn-color); }
-.season-card[data-season="autumn"]:hover .card-icon, 
-.season-card[data-season="autumn"]:hover .card-title { color: var(--autumn-color); }
-
-.season-card[data-season="winter"]:hover { border-color: var(--winter-color); }
-.season-card[data-season="winter"]:hover .card-icon, 
-.season-card[data-season="winter"]:hover .card-title { color: var(--winter-color); }
-
-
-/* --- 상세 페이지 (기본적으로 숨김) --- */
-.detail-view {
-    display: none;
-    padding: 120px 20px 80px;
-    max-width: 900px;
-    margin: 0 auto;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.detail-view.active {
-    display: block;
-    opacity: 1;
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-.detail-header {
-    text-align: center;
-    margin-bottom: 70px;
-}
-
-.detail-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    display: inline-block;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.detail-desc {
-    font-size: 1.1rem;
-    color: var(--text-sub);
-}
-
-/* 노래 리스트 스타일 */
-.song-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.song-item {
-    display: flex;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-    border: 1px solid #f5f5f5;
-}
-
-.song-item:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: var(--hover-shadow);
-}
-
-/* 앨범 커버 영역 */
-.song-cover {
-    width: 220px;
-    min-height: 220px;
-    background-color: #f8f8f8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    color: white;
-    flex-shrink: 0;
-    position: relative;
-}
-
-.song-cover img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-.song-content {
-    padding: 35px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.song-info {
+    padding: 20px;
+    text-align: left;
 }
 
-.song-content h3 {
-    font-size: 1.6rem;
-    margin-bottom: 5px;
-    font-weight: 700;
+.song-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
 }
 
-.song-content .artist {
-    color: var(--text-sub);
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.song-content .comment {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    color: #444;
-    background-color: #fcfcfc;
-    padding: 15px;
-    border-radius: 10px;
-    border-left: 3px solid #eee;
-}
-
-.youtube-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 25px;
-    border-radius: 10px;
-    color: white;
-    font-weight: 600;
+.song-info p {
     font-size: 0.95rem;
-    width: fit-content;
-    transition: var(--transition);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #666;
+    line-height: 1.5;
+    word-break: keep-all; /* 한글 단어 잘림 방지 */
 }
 
-.youtube-btn:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/* --- 계절별 배경색 설정 (요청하신 색상 코드 적용) --- */
+
+/* 봄: 벚꽃색 (임의 지정) */
+#spring {
+    background-color: #FFD1DC;
 }
 
-/* 하단 뒤로가기 버튼 영역 */
-.back-nav {
+/* 여름: #AAD1EF (제공) */
+#summer {
+    background-color: #AAD1EF;
+}
+
+/* 가을: #900200 (제공) - 배경이 어두우므로 텍스트 색상 조정 필요 없음 (타이틀은 흰색 고정) */
+#autumn {
+    background-color: #900200;
+}
+
+/* 겨울: #00310b (제공) */
+#winter {
+    background-color: #00310b;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #222;
+    color: #aaa;
     text-align: center;
-    margin-top: 80px;
-}
-
-.back-btn-large {
-    padding: 15px 40px;
-    border-radius: 50px;
-    border: 2px solid #eee;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: var(--transition);
-    background: white;
-    color: var(--text-main);
-    cursor: pointer;
-}
-
-.back-btn-large:hover {
-    border-color: var(--text-main);
-    background: var(--text-main);
-    color: white;
-}
-
-
-/* --- 계절별 테마 상세 적용 --- */
-
-/* Spring Theme */
-#spring-page .detail-title { color: var(--spring-color); }
-#spring-page .song-cover { background-color: var(--spring-color); }
-#spring-page .youtube-btn { background-color: var(--spring-color); }
-#spring-page .song-content .comment { border-left-color: var(--spring-color); }
-
-/* Summer Theme */
-#summer-page .detail-title { color: var(--summer-color); }
-#summer-page .song-cover { background-color: var(--summer-color); }
-#summer-page .youtube-btn { background-color: var(--summer-color); }
-#summer-page .song-content .comment { border-left-color: var(--summer-color); }
-
-/* Autumn Theme */
-#autumn-page .detail-title { color: var(--autumn-color); }
-#autumn-page .song-cover { background-color: var(--autumn-color); }
-#autumn-page .youtube-btn { background-color: var(--autumn-color); }
-#autumn-page .song-content .comment { border-left-color: var(--autumn-color); }
-
-/* Winter Theme */
-#winter-page .detail-title { color: var(--winter-color); }
-#winter-page .song-cover { background-color: var(--winter-color); }
-#winter-page .youtube-btn { background-color: var(--winter-color); }
-#winter-page .song-content .comment { border-left-color: var(--winter-color); }
-
-
-/* --- 반응형 미디어 쿼리 --- */
-@media (max-width: 1024px) {
-    .season-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .season-card { height: 300px; }
-}
-
-@media (max-width: 768px) {
-    .main-header h1 { font-size: 2.5rem; }
-    .song-item { flex-direction: column; }
-    .song-cover { width: 100%; height: 250px; min-height: auto; }
-    nav { padding: 15px 20px; }
-}
-
-@media (max-width: 480px) {
-    .season-grid { grid-template-columns: 1fr; }
-    .season-card { height: 250px; flex-direction: row; padding: 0 30px; justify-content: flex-start; gap: 20px; }
-    .card-icon { margin-bottom: 0; font-size: 3rem; }
-    .card-desc { opacity: 1; transform: translateY(0); margin-top: 5px; }
-    .season-card > div { text-align: left; }
-}
-
-/* --- 애니메이션 정의 --- */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    padding: 20px;
+    font-size: 0.9rem;
 }
