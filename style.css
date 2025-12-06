@@ -1,123 +1,71 @@
-/* ------------------------ 기본 설정 ------------------------ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: "Noto Sans KR", sans-serif;
-    color: #000;
-    background-color: #f5f7fa;
+    background: #f5f7fa;
+    color: black;
 }
 
-/* ------------------------ 탭 버튼 ------------------------ */
-.tabs {
+/* HEADER */
+header {
     text-align: center;
-    padding-top: 40px;
-}
-
-.tabs input[type="radio"] {
-    display: none;
-}
-
-.tab-buttons label {
-    display: inline-block;
-    padding: 12px 25px;
-    margin: 0 5px;
-    background: #ddd;
-    border-radius: 8px 8px 0 0;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-/* 선택된 탭 */
-#tab-spring:checked ~ .tab-buttons label[for="tab-spring"],
-#tab-summer:checked ~ .tab-buttons label[for="tab-summer"],
-#tab-autumn:checked ~ .tab-buttons label[for="tab-autumn"],
-#tab-winter:checked ~ .tab-buttons label[for="tab-winter"] {
-    background: #fff;
-    border-bottom: 2px solid #fff;
-}
-
-/* ------------------------ 콘텐츠 공통 ------------------------ */
-.tab-content {
-    display: none;
-    padding: 50px 20px;
-    min-height: 100vh;
-}
-
-#tab-spring:checked ~ #content-spring { display: block; }
-#tab-summer:checked ~ #content-summer { display: block; }
-#tab-autumn:checked ~ #content-autumn { display: block; }
-#tab-winter:checked ~ #content-winter { display: block; }
-
-/* ------------------------ 배경 ------------------------ */
-#content-spring { background-color: #FFD1DC; }
-#content-summer { background-color: #AAD1EF; }
-#content-autumn { background-color: #900200; }
-#content-winter { background-color: #00310b; }
-
-.season-title {
-    font-size: 3rem;
-    margin-bottom: 40px;
+    padding: 40px;
+    background: #222;
     color: white;
-    text-align: center;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/* ------------------------ 카드 ------------------------ */
-.card-container {
+/* NAV */
+nav {
+    background: #333;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    list-style: none;
+    padding: 15px 0;
 }
 
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS 기본적으로 숨김 */
+.season-section {
+    display: none;
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+/* 선택된 섹션 보이기 */
+.season-section:target {
+    display: block;
+}
+
+/* 기본값: 봄 */
+.season-section:first-of-type {
+    display: block;
+}
+
+/* 카드 스타일 */
 .song-card {
     background: white;
-    width: 350px;
+    padding: 30px;
     border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.song-card:hover {
-    transform: translateY(-10px);
-}
-
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-}
-
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.song-info {
-    padding: 20px;
-}
-
-.song-info h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-/* ------------------------ 푸터 ------------------------ */
-footer {
-    background-color: #222;
-    color: #aaa;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
+/* 배경색 */
+#spring { background: #FFD1DC; }
+#summer { background: #AAD1EF; }
+#autumn { background: #900200; color: white; }
+#winter { background: #00310b; color: white; }
