@@ -52,7 +52,7 @@ R&R(Role and Responsibilities)을 명확히 하여 협업을 진행했습니다.
     * README 문서 작성
 * **[최현아] (디자인)**
     * CSS 디자인 시스템 구축 (색상 선정)
-    * 가을 섹션 HTML 구조 작성
+    * 여름 섹션 HTML 구조 작성
 * **[김영민] (디자인, ppt제작)**
     * 가을 섹션 HTML 구조 작성
     * ppt 자료 정리
