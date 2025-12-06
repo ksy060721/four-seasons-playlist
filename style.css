@@ -99,6 +99,8 @@ body {
 
 .video-container iframe {
     position: absolute;
+    top: 0;  /* 👈 이 줄 추가 (위쪽 끝에 딱 붙이기) */
+    left: 0; /* 👈 이 줄 추가 (왼쪽 끝에 딱 붙이기) */
     width: 100%;
     height: 100%;
 }
