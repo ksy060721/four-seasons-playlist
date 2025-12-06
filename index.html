@@ -4,36 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사계절 플레이리스트</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS 외부 파일 연결 -->
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            background-color: #f5f7fa;
-            color: #000;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>Four Seasons Playlist</h1>
-    <p>계절의 온도를 담은 우리 조만의 노래 추천</p>
-</header>
+    <div class="tabs">
 
-<main>
-    <ul class="season-list">
-        <li><a href="spring.html">🌸 Spring</a></li>
-        <li><a href="summer.html">☀️ Summer</a></li>
-        <li><a href="autumn.html">🍂 Autumn</a></li>
-        <li><a href="winter.html">❄️ Winter</a></li>
-    </ul>
-</main>
+        <!-- 라디오 버튼 -->
+        <input type="radio" name="season" id="tab-spring" checked>
+        <input type="radio" name="season" id="tab-summer">
+        <input type="radio" name="season" id="tab-autumn">
+        <input type="radio" name="season" id="tab-winter">
 
-<footer>
-    <p>&copy; 2025 Open Source Software Project Team. All rights reserved.</p>
-</footer>
+        <!-- 탭 버튼 -->
+        <div class="tab-buttons">
+            <label for="tab-spring">봄</label>
+            <label for="tab-summer">여름</label>
+            <label for="tab-autumn">가을</label>
+            <label for="tab-winter">겨울</label>
+        </div>
+
+        <!-- ------------------------ 봄 콘텐츠 ------------------------ -->
+        <section id="content-spring" class="tab-content">
+            <h2 class="season-title">봄 플레이리스트</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/영상ID"></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>노래 제목</h3>
+                        <p>봄에 어울리는 설명 텍스트.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------------------ 여름 콘텐츠 ------------------------ -->
+        <section id="content-summer" class="tab-content">
+            <h2 class="season-title">여름 플레이리스트</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/영상ID"></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>노래 제목</h3>
+                        <p>여름 무드의 노래 설명 텍스트.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------------------ 가을 콘텐츠 ------------------------ -->
+        <section id="content-autumn" class="tab-content">
+            <h2 class="season-title">가을 플레이리스트</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/영상ID"></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>노래 제목</h3>
+                        <p>감성 가을 노래 설명.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ------------------------ 겨울 콘텐츠 ------------------------ -->
+        <section id="content-winter" class="tab-content">
+            <h2 class="season-title">겨울 플레이리스트</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/영상ID"></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>노래 제목</h3>
+                        <p>겨울 감성 설명.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        © 2025 Four Seasons Playlist
+    </footer>
 
 </body>
 </html>
