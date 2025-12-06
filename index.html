@@ -2,60 +2,164 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사계절 플레이리스트</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-    <h1>사계절 플레이리스트</h1>
-</header>
+    <div class="tabs">
 
-<nav>
-    <ul>
-        <li><a href="#spring">봄</a></li>
-        <li><a href="#summer">여름</a></li>
-        <li><a href="#autumn">가을</a></li>
-        <li><a href="#winter">겨울</a></li>
-    </ul>
-</nav>
+        <input type="radio" name="season" id="tab-spring" checked>
+        <input type="radio" name="season" id="tab-summer">
+        <input type="radio" name="season" id="tab-autumn">
+        <input type="radio" name="season" id="tab-winter">
 
-<div class="tab-content">
-
-    <section id="spring" class="season-section">
-        <h2 class="season-title">🌸 봄 플레이리스트</h2>
-        <div class="card-container">
-            <!-- 봄 노래 카드 -->
-            <div class="song-card">봄 노래 1</div>
-            <div class="song-card">봄 노래 2</div>
+        <div class="tab-buttons">
+            <label for="tab-spring">🌸 봄</label>
+            <label for="tab-summer">☀️ 여름</label>
+            <label for="tab-autumn">🍂 가을</label>
+            <label for="tab-winter">❄️ 겨울</label>
         </div>
-    </section>
 
-    <section id="summer" class="season-section">
-        <h2 class="season-title">🌊 여름 플레이리스트</h2>
-        <div class="card-container">
-            <div class="song-card">여름 노래 1</div>
-            <div class="song-card">여름 노래 2</div>
-        </div>
-    </section>
+        <section id="content-spring" class="tab-content">
+            <h2 class="season-title">SPRING</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/cIGgSI1uhKI" title="봄이 좋냐?" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>봄이 좋냐? - 10cm</h3>
+                        <p>살랑살랑 봄바람 느낌이지만 커플들을 질투하는 귀여운 노래</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/tXV7dfvSefo" title="벚꽃엔딩" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>벚꽃엔딩 - 버스커버스커</h3>
+                        <p>떨어지는 벚꽃잎들 사이로 걷고 싶은 그대를 떠올리게 하는 명곡</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/AsXxuIdpkWM" title="나만, 봄" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>나만, 봄 – 볼빨간 사춘기</h3>
+                        <p>짝사랑의 간질간질한 마음을 담은 따뜻한 노래</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="autumn" class="season-section">
-        <h2 class="season-title">🍁 가을 플레이리스트</h2>
-        <div class="card-container">
-            <div class="song-card">가을 노래 1</div>
-            <div class="song-card">가을 노래 2</div>
-        </div>
-    </section>
+        <section id="content-summer" class="tab-content">
+            <h2 class="season-title">SUMMER</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/UF53cptEE5k" title="View" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>View - 샤이니</h3>
+                        <p>공기를 청량하게 만들어주는 K-POP 청량 감성의 정석</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/HaqhQs5lBWE" title="파랗게" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>파랗게 - WOODZ</h3>
+                        <p>모든 감정이 파랗게 물들어가는 순간을 표현한 시원한 곡</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/0LiQp7y8Wwc" title="Supersonic" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>Supersonic - fromis_9</h3>
+                        <p>청춘 영화 같은 여름 감성이 느껴지는 산뜻한 곡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="winter" class="season-section">
-        <h2 class="season-title">❄ 겨울 플레이리스트</h2>
-        <div class="card-container">
-            <div class="song-card">겨울 노래 1</div>
-            <div class="song-card">겨울 노래 2</div>
-        </div>
-    </section>
+        <section id="content-autumn" class="tab-content">
+            <h2 class="season-title">AUTUMN</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8Yl_YHYy3iE" title="가을 아침" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>가을 아침 - 양희은</h3>
+                        <p>서늘한 냉기가 반겨주는 가을 아침이 시작되면 찾게 되는 곡</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9T_uq_HpfyQ" title="가을 밤에 든 생각" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>가을 밤에 든 생각 - 잔나비</h3>
+                        <p>담백한 가사와 독특한 감성으로 질리지 않는 노래</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/k86b7E8ZVZ0" title="가을이 오면" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>가을이 오면 - 이문세</h3>
+                        <p>가을 노래지만 밝고 산뜻한 멜로디가 특징인 명곡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <section id="content-winter" class="tab-content">
+            <h2 class="season-title">WINTER</h2>
+            <div class="card-container">
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/h0b4nw7NDhA" title="첫눈" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>첫눈 - EXO</h3>
+                        <p>겨울만 되면 찾아 듣게 되는 설렘 가득한 시그니처 곡</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/gPNu9OIj4Zo" title="눈사람" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>눈사람 - 정승환</h3>
+                        <p>겨울의 따뜻함과 쓸쓸함을 동시에 담아낸 섬세한 곡</p>
+                    </div>
+                </div>
+                <div class="song-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/lj8TV9q59P4" title="Christmas Tree" allowfullscreen></iframe>
+                    </div>
+                    <div class="song-info">
+                        <h3>Christmas Tree - V</h3>
+                        <p>겨울밤의 조용한 공기를 담아낸 잔잔한 힐링 곡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Open Source Software Project Team. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
